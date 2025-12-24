@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Acerca de BookMate - Sistema de Recomendación de Libros"
+    />
+    <title>Acerca de - BookMate</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fas fa-book-reader"></i> BookMate
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="catalog.html">Catálogo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="library.html">Mi Biblioteca</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">Acerca de</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav" id="authButtons"></ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container py-5">
+      <section class="mb-5 animate-up">
+        <h2 class="section-title">Sobre BookMate</h2>
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <p class="lead">
+              BookMate es una plataforma web innovadora que revoluciona la forma
+              en que los lectores descubren nuevos libros mediante
+              recomendaciones inteligentes.
+            </p>
+            <p>
+              Nuestro sistema combina técnicas de recomendación basadas en
+              metadatos (heurística) con algoritmos avanzados de inteligencia
+              artificial que utilizan embeddings de sinopsis literarias para
+              ofrecer sugerencias altamente personalizadas.
+            </p>
+            <p>
+              En BookMate, creemos que cada lector tiene gustos únicos y merece
+              descubrir libros que realmente conecten con sus intereses. Por
+              eso, hemos desarrollado un sistema que aprende de tus preferencias
+              y te ayuda a expandir tus horizontes literarios.
+            </p>
+          </div>
+          <div class="col-lg-6 text-center animate-up delay-200">
+            <i
+              class="fas fa-book-open text-primary"
+              style="font-size: 10rem; opacity: 0.2"
+            ></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <div class="row g-4">
+          <div class="col-md-6 animate-up delay-200">
+            <div class="card h-100 shadow border-0 hover-elevate">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-bullseye text-primary fa-3x"></i>
+                </div>
+                <h3 class="card-title mb-3 fw-bold">Misión</h3>
+                <p>
+                  Facilitar el descubrimiento de libros mediante tecnología de
+                  recomendación inteligente, conectando a los lectores con
+                  historias que enriquecerán sus vidas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 animate-up delay-300">
+            <div class="card h-100 shadow border-0 hover-elevate">
+              <div class="card-body text-center p-4">
+                <div class="mb-3">
+                  <i class="fas fa-eye text-success fa-3x"></i>
+                </div>
+                <h3 class="card-title mb-3 fw-bold">Visión</h3>
+                <p>
+                  Convertirnos en la plataforma de referencia para los amantes
+                  de la lectura, ofreciendo la experiencia más personalizada de
+                  descubrimiento literario.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="section-title animate-up">Funcionalidades Principales</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3 animate-up delay-100">
+            <div class="text-center p-4 card h-100 border-0 shadow-sm">
+              <i class="fas fa-search fa-3x text-primary mb-3"></i>
+              <h5 class="fw-bold">Catálogo Extenso</h5>
+              <p class="text-muted small">
+                Accede a un amplio catálogo de libros con información detallada.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 animate-up delay-200">
+            <div class="text-center p-4 card h-100 border-0 shadow-sm">
+              <i class="fas fa-filter fa-3x text-success mb-3"></i>
+              <h5 class="fw-bold">Filtros Avanzados</h5>
+              <p class="text-muted small">
+                Busca y filtra libros por género, año, autor y páginas.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 animate-up delay-300">
+            <div class="text-center p-4 card h-100 border-0 shadow-sm">
+              <i class="fas fa-bookmark fa-3x text-warning mb-3"></i>
+              <h5 class="fw-bold">Biblioteca Personal</h5>
+              <p class="text-muted small">
+                Organiza tus libros leídos, leyendo y por leer.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 animate-up delay-400">
+            <div class="text-center p-4 card h-100 border-0 shadow-sm">
+              <i class="fas fa-brain fa-3x text-danger mb-3"></i>
+              <h5 class="fw-bold">IA Inteligente</h5>
+              <p class="text-muted small">
+                Recomendaciones personalizadas con inteligencia artificial.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5 bg-light p-5 rounded animate-up delay-200">
+        <h2 class="section-title text-center mb-4">Tecnologías Utilizadas</h2>
+        <div class="row g-4 text-center justify-content-center">
+          <div class="col-6 col-md-4 col-lg-2 animate-up delay-300">
+            <div class="tech-badge bg-white shadow-sm rounded">
+              <i class="fab fa-python fa-3x text-primary mb-2"></i>
+              <p class="mb-0 fw-bold">Python</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 animate-up delay-300">
+            <div class="tech-badge bg-white shadow-sm rounded">
+              <i class="fas fa-server fa-3x text-success mb-2"></i>
+              <p class="mb-0 fw-bold">Flask</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 animate-up delay-400">
+            <div class="tech-badge bg-white shadow-sm rounded">
+              <i class="fas fa-database fa-3x text-warning mb-2"></i>
+              <p class="mb-0 fw-bold">PostgreSQL</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 animate-up delay-400">
+            <div class="tech-badge bg-white shadow-sm rounded">
+              <i class="fab fa-docker fa-3x text-info mb-2"></i>
+              <p class="mb-0 fw-bold">Docker</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 animate-up delay-500">
+            <div class="tech-badge bg-white shadow-sm rounded">
+              <i class="fas fa-robot fa-3x text-danger mb-2"></i>
+              <p class="mb-0 fw-bold">AI/ML</p>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 animate-up delay-500">
+            <div class="tech-badge bg-white shadow-sm rounded">
+              <i class="fab fa-html5 fa-3x text-secondary mb-2"></i>
+              <p class="mb-0 fw-bold">HTML/JS</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="section-title animate-up">Nuestro Equipo</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4 animate-up delay-100">
+            <div class="card text-center shadow border-0 hover-elevate h-100">
+              <div class="card-body">
+                <div class="avatar-placeholder mb-3 shadow-sm">
+                  <i class="fas fa-user fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Yoshua Valverde</h5>
+                <p class="text-primary small fw-bold text-uppercase mb-2">
+                  Documentación
+                </p>
+                <p class="small text-muted">
+                  Responsable de SRS, charter, informes y especificaciones de
+                  casos de uso.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 animate-up delay-200">
+            <div class="card text-center shadow border-0 hover-elevate h-100">
+              <div class="card-body">
+                <div class="avatar-placeholder mb-3 shadow-sm">
+                  <i class="fas fa-user fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Joaquin Torres</h5>
+                <p class="text-primary small fw-bold text-uppercase mb-2">
+                  Arquitectura
+                </p>
+                <p class="small text-muted">
+                  Responsable de diagramas BPMN, C4, robustez, secuencia y
+                  diseño.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 animate-up delay-300">
+            <div class="card text-center shadow border-0 hover-elevate h-100">
+              <div class="card-body">
+                <div class="avatar-placeholder mb-3 shadow-sm">
+                  <i class="fas fa-user fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Farid Villanueva</h5>
+                <p class="text-primary small fw-bold text-uppercase mb-2">
+                  Backend
+                </p>
+                <p class="small text-muted">
+                  Responsable de Flask, endpoints REST, autenticación y Docker
+                  web.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 animate-up delay-400">
+            <div class="card text-center shadow border-0 hover-elevate h-100">
+              <div class="card-body">
+                <div class="avatar-placeholder mb-3 shadow-sm">
+                  <i class="fas fa-user fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Arturo Osorio</h5>
+                <p class="text-primary small fw-bold text-uppercase mb-2">
+                  Frontend
+                </p>
+                <p class="small text-muted">
+                  Responsable de HTML, CSS, JavaScript y diseño responsive.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 animate-up delay-500">
+            <div class="card text-center shadow border-0 hover-elevate h-100">
+              <div class="card-body">
+                <div class="avatar-placeholder mb-3 shadow-sm">
+                  <i class="fas fa-user fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Jamir Rojas</h5>
+                <p class="text-primary small fw-bold text-uppercase mb-2">
+                  Data & AI
+                </p>
+                <p class="small text-muted">
+                  Responsable de PostgreSQL, modelos, recomendador e IA con
+                  embeddings.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 animate-up delay-500">
+            <div class="card text-center shadow border-0 hover-elevate h-100">
+              <div class="card-body">
+                <div class="avatar-placeholder mb-3 shadow-sm">
+                  <i class="fas fa-user fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title fw-bold">Gustavo Delgado</h5>
+                <p class="text-primary small fw-bold text-uppercase mb-2">
+                  DevOps & QA
+                </p>
+                <p class="small text-muted">
+                  Responsable de Docker, pruebas, planes y control de calidad.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="bg-primary text-white p-5 rounded text-center animate-up delay-500"
+      >
+        <h3><i class="fas fa-university"></i> Proyecto Académico</h3>
+        <p class="lead mb-0">
+          CC341 - Ingeniería de Software<br />
+          Universidad Nacional de Ingeniería (UNI)<br />
+          Grupo 6 - Ciclo 2025-1
+        </p>
+      </section>
+    </div>
+
+    <footer class="footer mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <h5><i class="fas fa-book-reader"></i> BookMate</h5>
+            <p class="text-muted-custom small">
+              Tu compañero de lectura inteligente. Descubre, organiza y disfruta
+              tus libros favoritos con recomendaciones personalizadas.
+            </p>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5>Enlaces</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-decoration-none text-muted-custom"
+                  >Inicio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="catalog.html"
+                  class="text-decoration-none text-muted-custom"
+                  >Catálogo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="about.html"
+                  class="text-decoration-none text-muted-custom"
+                  >Acerca de</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-decoration-none text-muted-custom"
+                  onclick="alert('Disponible próximamente'); return false;"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-4">
+            <h5>Proyecto Académico</h5>
+            <p class="text-muted-custom small">
+              CC341 - Ingeniería de Software<br />
+              Universidad Nacional de Ingeniería (UNI)<br />
+              Grupo 6 - 2025
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom pt-3 border-top border-secondary text-center">
+          <p class="small mb-0">
+            &copy; 2025 BookMate. Proyecto Académico - Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="auth-modals-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/library.js"></script>
+    <script>
+      // Cargar modals
+      fetch("assets/includes/auth-modals.html")
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById("auth-modals-container").innerHTML = html;
+        });
+
+      // Actualizar UI de autenticación al cargar la página
+      document.addEventListener("DOMContentLoaded", function () {
+        if (window.updateAuthUI) updateAuthUI();
+      });
+    </script>
+
+    <style>
+      .avatar-placeholder {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #f8f9fa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+      }
+
+      .tech-badge {
+        padding: 1.5rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .tech-badge:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      .hover-elevate {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-elevate:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+      }
+    </style>
+  </body>
+</html>

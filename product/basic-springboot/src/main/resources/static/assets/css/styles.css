@@ -1,0 +1,493 @@
+/* ============================================================================
+   BOOKMATE - ESTILOS GLOBALES
+   
+   ============================================================================ */
+
+/* Checkboxes de selección */
+.form-check-input:checked {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+.form-check-label {
+  cursor: pointer;
+}
+
+.card.border-primary {
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.3) !important;
+}
+
+.card.border-success {
+  box-shadow: 0 0 15px rgba(40, 167, 69, 0.3) !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#recommendationsSection {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.btn {
+  transition: transform 0.1s;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+
+.badge {
+  padding: 0.5em 0.8em;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 6px;
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(33, 37, 41, 0.85) !important; /* Semi-transparente */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.book-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.book-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.book-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.book-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.book-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.book-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+/* Variables CSS */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --success-color: #27ae60;
+  --text-dark: #2c3e50;
+  --text-light: #7f8c8d;
+  --bg-light: #ecf0f1;
+  --bg-white: #ffffff;
+  --border-color: #bdc3c7;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra vertical */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color del fondo de la barra */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color de la barra móvil */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 2px solid #f1f1f1; /* Espacio alrededor */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color al pasar el mouse */
+}
+
+/* Clase base para animar cualquier elemento */
+.animate-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  opacity: 0; /* Empiezan invisibles */
+  transform: translateY(30px); /* Empiezan un poco abajo */
+}
+
+/* Retrasos para efecto cascada (Stagger) */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+.delay-200 {
+  animation-delay: 0.2s;
+}
+.delay-300 {
+  animation-delay: 0.3s;
+}
+.delay-400 {
+  animation-delay: 0.4s;
+}
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+/* Header y navegación */
+.navbar {
+  background-color: var(--primary-color) !important;
+  box-shadow: var(--shadow);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: var(--transition);
+  margin: 0 0.5rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.btn-login,
+.btn-register {
+  margin-left: 0.5rem;
+  border-radius: 20px;
+  padding: 0.375rem 1.25rem;
+}
+
+.btn-login {
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-login:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.btn-register {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+}
+
+.btn-register:hover {
+  background-color: #c0392b;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+.footer h5 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Botones generales */
+.btn-primary-custom {
+  background-color: var(--secondary-color);
+  border: none;
+  color: white;
+  padding: 0.6rem 2rem;
+  border-radius: 25px;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.btn-primary-custom:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Tarjetas de libros */
+.book-card {
+  background: var(--bg-white);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  background: linear-gradient(
+    135deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-card-body {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.book-author {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.book-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.book-year {
+  color: var(--text-light);
+  font-size: 0.85rem;
+}
+
+/* Rating con estrellas */
+.rating {
+  color: #f39c12;
+  font-size: 0.9rem;
+}
+
+.rating i {
+  margin-right: 2px;
+}
+
+/* Badges y tags */
+.badge-custom {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.badge-genre {
+  background-color: var(--accent-color);
+}
+
+/* Loading spinner */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: var(--text-light);
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+}
+
+/* Mensajes de alerta */
+.alert-custom {
+  border-radius: 10px;
+  border: none;
+  box-shadow: var(--shadow);
+}
+
+/* Utilidades */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.text-muted-custom {
+  color: var(--text-light) !important;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .book-cover {
+    height: 250px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .book-cover {
+    height: 280px;
+  }
+}
+/* --- ESTILO PREMIUM DE TARJETAS (SOLO CSS) --- */
+
+/* 1. El Contenedor de la Portada (El cuadro de color) */
+.book-cover {
+  /* Dimensiones y Fondo */
+  width: 100%;
+  aspect-ratio: 2/3; /* Mantiene proporción de libro siempre */
+  background: linear-gradient(
+    135deg,
+    #4facfe 0%,
+    #00f2fe 100%
+  ); /* Tu degradado favorito */
+
+  /* Layout del Texto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+
+  /* Tipografía */
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+
+  /* Necesario para la marca de agua */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0; /* Bordes redondeados solo arriba */
+}
+
+/* 2. La Marca de Agua (Ícono Mágico con CSS) */
+/* Usamos ::after para crear el ícono sin ensuciar el HTML/JS */
+.book-cover::after {
+  content: "\f02d"; /* Código Unicode del icono fa-book */
+  font-family: "Font Awesome 6 Free"; /* Fuente de iconos */
+  font-weight: 900; /* Necesario para iconos sólidos */
+
+  /* Posición y Estilo */
+  position: absolute;
+  bottom: -15px;
+  right: -15px;
+  font-size: 7rem; /* Gigante */
+  color: white;
+  opacity: 0.15; /* Transparente */
+  transform: rotate(-20deg);
+  z-index: 0; /* Detrás del texto */
+  pointer-events: none;
+}
+
+/* 3. Asegurar que el texto esté encima del icono */
+/* Como el texto es contenido directo, no podemos darle z-index fácil,
+   pero el z-index: 0 del icono suele ser suficiente. 
+   Si el texto queda tapado, avísame. */
+
+/* 4. Efecto Hover Sutil (Opcional, muy ligero) */
+.book-card:hover .book-cover {
+  filter: brightness(1.05); /* Se ilumina un poco */
+}
