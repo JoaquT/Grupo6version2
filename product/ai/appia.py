@@ -11,7 +11,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 os.environ["PGCLIENTENCODING"] = "utf-8"
 
 # --- CONFIGURACIÓN DE BASE DE DATOS ---
-DB_URI = 'postgresql://postgres:postgres@localhost:5432/bookmate_db'
+DB_HOST = os.getenv('DB_HOST', 'localhost') 
+DB_URI = f'postgresql://postgres:postgres@{DB_HOST}:5432/bookmate_db'
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI

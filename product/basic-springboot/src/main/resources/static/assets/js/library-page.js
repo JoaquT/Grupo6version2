@@ -289,7 +289,7 @@ function updateRecommendationButton() {
  * Obtener recomendaciones basadas en libros seleccionados
  */
 /**
- * Obtener recomendaciones (VERSIÓN CONECTADA AL BACKEND AI)
+ * Obtener recomendaciones
  */
 /**
  * Obtener recomendaciones (Conexión a Microservicio Python AI)

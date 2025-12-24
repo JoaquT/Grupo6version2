@@ -51,8 +51,7 @@ function renderBookDetails() {
 
   const coverContainer = document.getElementById("bookCoverLarge");
 
-  // 1. Limpiar estilos del contenedor (El "Div")
-  // Esto elimina el degradado azul/rojo y el padding
+  // 1. Limpiar estilos del contenedor
   coverContainer.style.background = "transparent";
   coverContainer.style.backgroundColor = "transparent";
   coverContainer.style.backgroundImage = "none";
@@ -66,7 +65,7 @@ function renderBookDetails() {
   coverContainer.style.margin = "0 auto"; // Centrado horizontal si sobra espacio
 
   // 3. Insertar la imagen limpia
-  // Se han quitado clases extrañas, dejando solo la imagen pura
+
   coverContainer.innerHTML = `
       <img src="${currentBook.cover}" 
            alt="${currentBook.title}" 
@@ -114,7 +113,6 @@ function renderBookDetails() {
 
   // Tags
   const tagsContainer = document.getElementById("bookTags");
-  // Verificamos si hay tags antes de mapear
   if (currentBook.tags && Array.isArray(currentBook.tags)) {
     tagsContainer.innerHTML = currentBook.tags
       .map((tag) => `<span class="badge-custom">${tag}</span>`)
@@ -150,7 +148,7 @@ function renderBookActions() {
  * Cargar libros similares
  */
 /**
- * Cargar libros similares (CORREGIDO PARA MULTI-GÉNERO)
+ * Cargar libros similares
  */
 async function loadSimilarBooks() {
   const container = document.getElementById("similarBooksGrid");
@@ -174,7 +172,7 @@ async function loadSimilarBooks() {
       // 2. Coincidencia por Autor (Prioridad alta)
       if (book.author === currentBook.author) return true;
 
-      // 3. Coincidencia por Género (Si comparten AL MENOS UN género)
+      // 3. Coincidencia por Género
       if (book.genre) {
         const bookGenres = book.genre.split(",").map((g) => g.trim());
         // Verificar intersección de arrays

@@ -1,4 +1,7 @@
 Flask
-flask-cors
+Flask-SQLAlchemy
+Flask-Cors
+psycopg2-binary
+pandas
 scikit-learn
 numpy

@@ -7,14 +7,28 @@ from sqlalchemy.dialects.postgresql import JSON
 # --- SOLUCIÓN DE CODIFICACIÓN (WINDOWS) ---
 os.environ["PGCLIENTENCODING"] = "utf-8"
 
-# --- CONFIGURACIÓN BD ---
-DB_URI = 'postgresql://postgres:postgres@localhost:5432/bookmate_db'
+# --- CONFIGURACIÓN INTELIGENTE (Docker vs Local) ---
+# 1. BASE DE DATOS: Si Docker nos da una URL, la usamos. Si no, usamos localhost.
+DB_URI = os.environ.get('DATABASE_URL', 'postgresql://postgres:postgres@localhost:5432/bookmate_db')
 
+# 2. RUTAS DE ARCHIVO:
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-SPRING_STATIC_DIR = os.path.join(BASE_DIR, '..', 'basic-springboot', 'src', 'main', 'resources', 'static')
-JSON_FILE = os.path.join(SPRING_STATIC_DIR, 'assets', 'data', 'books.json')
+# Ruta A: Archivo local (Para Docker, ya que copiamos books.json aquí)
+LOCAL_JSON_PATH = os.path.join(BASE_DIR, 'books.json')
 
+# Ruta B: Ruta relativa (Para desarrollo local en tu PC)
+DEV_JSON_PATH = os.path.join(BASE_DIR, '..', 'basic-springboot', 'src', 'main', 'resources', 'static', 'assets', 'data', 'books.json')
+
+# Decisión automática:
+if os.path.exists(LOCAL_JSON_PATH):
+    JSON_FILE = LOCAL_JSON_PATH
+    print(f"📂 MODO DOCKER DETECTADO: Usando {JSON_FILE}")
+else:
+    JSON_FILE = DEV_JSON_PATH
+    print(f"💻 MODO LOCAL DETECTADO: Usando {JSON_FILE}")
+
+# --- INICIALIZACIÓN APP ---
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = DB_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -40,47 +54,48 @@ class Book(db.Model):
 def seed_database():
     if not os.path.exists(JSON_FILE):
         print(f" [ERROR] No encuentro el archivo en: {JSON_FILE}")
-        print("Asegúrate de que la ruta sea correcta.")
+        print("Asegúrate de haber copiado books.json a la carpeta 'ai' si estás en Docker.")
         return
 
     with app.app_context():
         try:
+            print(f"[INFO] Conectando a BD: {DB_URI}")
             print("[INFO] Limpiando base de datos...")
             db.drop_all()
             print("[INFO] Creando tablas...")
             db.create_all()
 
-            print(f"[INFO] Leyendo archivo REAL: {JSON_FILE}")
+            print(f"[INFO] Leyendo archivo: {JSON_FILE}")
             with open(JSON_FILE, 'r', encoding='utf-8') as f:
                 books_data = json.load(f)
 
             # Depuración de IDs
             ids = [b.get('id') for b in books_data]
-            print(f"🔍 Se encontraron {len(ids)} libros. IDs: {ids}")
+            print(f"🔍 Se encontraron {len(ids)} libros.")
 
             print(f"[INFO] Insertando {len(books_data)} libros...")
             for b in books_data:
                 new_book = Book(
-                    id=b.get('id'), #type:ignore
-                    title=b.get('title'),#type:ignore
-                    author=b.get('author'),#type:ignore
-                    year=b.get('year'),#type:ignore
-                    genre=b.get('genre'),#type:ignore
-                    pages=b.get('pages'),#type:ignore
-                    rating=b.get('rating'),#type:ignore
-                    reviews_count=b.get('reviews_count'),#type:ignore
-                    cover=b.get('cover'),#type:ignore
-                    synopsis=b.get('synopsis'),#type:ignore
-                    isbn=b.get('isbn'),#type:ignore
-                    tags=b.get('tags')#type:ignore
+                    id=b.get('id'),
+                    title=b.get('title'),
+                    author=b.get('author'),
+                    year=b.get('year'),
+                    genre=b.get('genre'),
+                    pages=b.get('pages'),
+                    rating=b.get('rating'),
+                    reviews_count=b.get('reviews_count'),
+                    cover=b.get('cover'),
+                    synopsis=b.get('synopsis'),
+                    isbn=b.get('isbn'),
+                    tags=b.get('tags')
                 )
                 db.session.add(new_book)
             
             db.session.commit()
-            print("[SUCCESS] ¡Base de datos actualizada con tus cambios de Spring Boot!")
+            print("[SUCCESS] ¡Base de datos actualizada correctamente!")
             
         except Exception as e:
-            print(f" ERROR: {e}")
+            print(f" ERROR CRÍTICO: {e}")
 
 if __name__ == '__main__':
     seed_database()

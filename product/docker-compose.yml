@@ -1,0 +1,47 @@
+version: "3.8"
+
+services:
+  # 1. BASE DE DATOS (PostgreSQL)
+  db:
+    image: postgres:15
+    container_name: bookmate_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bookmate_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  # 2. IA SERVICE (Python)
+  ai-service:
+    build: ./ai
+    container_name: bookmate_ai
+    ports:
+      - "5000:5000"
+    environment:
+      # OJO: Dentro de Docker, el host no es 'localhost', es el nombre del servicio 'db'
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/bookmate_db
+    depends_on:
+      - db
+
+  # 3. BACKEND SERVICE (Java Spring Boot)
+  backend-service:
+    build: ./basic-springboot
+    container_name: bookmate_backend
+    ports:
+      - "8080:8080"
+    environment:
+      # Conexión a la BD usando el nombre del servicio 'db'
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/bookmate_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      # Si Java necesita llamar a Python, usa esta URL:
+      AI_SERVICE_URL: http://ai-service:5000
+    depends_on:
+      - db
+      - ai-service
+
+volumes:
+  postgres_data:

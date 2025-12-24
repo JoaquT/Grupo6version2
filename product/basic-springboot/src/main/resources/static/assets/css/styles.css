@@ -1,6 +1,5 @@
 /* ============================================================================
    BOOKMATE - ESTILOS GLOBALES
-   
    ============================================================================ */
 
 /* Checkboxes de selección */
@@ -122,14 +121,13 @@
   background: #555; /* Color al pasar el mouse */
 }
 
-/* Clase base para animar cualquier elemento */
 .animate-up {
   animation: fadeInUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
-  opacity: 0; /* Empiezan invisibles */
-  transform: translateY(30px); /* Empiezan un poco abajo */
+  opacity: 0;
+  transform: translateY(30px);
 }
 
-/* Retrasos para efecto cascada (Stagger) */
+/* Retrasos para efecto cascada  */
 .delay-100 {
   animation-delay: 0.1s;
 }
@@ -429,26 +427,17 @@ body {
     height: 280px;
   }
 }
-/* --- ESTILO PREMIUM DE TARJETAS (SOLO CSS) --- */
 
-/* 1. El Contenedor de la Portada (El cuadro de color) */
 .book-cover {
-  /* Dimensiones y Fondo */
   width: 100%;
-  aspect-ratio: 2/3; /* Mantiene proporción de libro siempre */
-  background: linear-gradient(
-    135deg,
-    #4facfe 0%,
-    #00f2fe 100%
-  ); /* Tu degradado favorito */
+  aspect-ratio: 2/3;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 
-  /* Layout del Texto */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
 
-  /* Tipografía */
   color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
@@ -457,37 +446,27 @@ body {
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   line-height: 1.4;
 
-  /* Necesario para la marca de agua */
   position: relative;
   overflow: hidden;
-  border-radius: 8px 8px 0 0; /* Bordes redondeados solo arriba */
+  border-radius: 8px 8px 0 0;
 }
 
-/* 2. La Marca de Agua (Ícono Mágico con CSS) */
-/* Usamos ::after para crear el ícono sin ensuciar el HTML/JS */
 .book-cover::after {
-  content: "\f02d"; /* Código Unicode del icono fa-book */
-  font-family: "Font Awesome 6 Free"; /* Fuente de iconos */
-  font-weight: 900; /* Necesario para iconos sólidos */
+  content: "\f02d";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
 
-  /* Posición y Estilo */
   position: absolute;
   bottom: -15px;
   right: -15px;
-  font-size: 7rem; /* Gigante */
+  font-size: 7rem;
   color: white;
-  opacity: 0.15; /* Transparente */
+  opacity: 0.15;
   transform: rotate(-20deg);
-  z-index: 0; /* Detrás del texto */
+  z-index: 0;
   pointer-events: none;
 }
 
-/* 3. Asegurar que el texto esté encima del icono */
-/* Como el texto es contenido directo, no podemos darle z-index fácil,
-   pero el z-index: 0 del icono suele ser suficiente. 
-   Si el texto queda tapado, avísame. */
-
-/* 4. Efecto Hover Sutil (Opcional, muy ligero) */
 .book-card:hover .book-cover {
-  filter: brightness(1.05); /* Se ilumina un poco */
+  filter: brightness(1.05);
 }
